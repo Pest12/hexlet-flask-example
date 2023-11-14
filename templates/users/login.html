@@ -1,0 +1,14 @@
+<!doctype html>
+<html>
+  <body>
+    <form action="{{ url_for('user_login') }}">
+      <div>
+        <label>
+          <h1>Login</h1>
+          <input type="text" name="email" value="{{ email }}">
+          <input type="submit" value="Login">
+        </label>
+      </div>
+    </form>
+  </body>
+</html>

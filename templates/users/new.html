@@ -1,0 +1,28 @@
+<!doctype html>
+<html>
+  <body>
+    <h2>New User</h2>
+    <hr>
+    <form action="/users" method="post">
+      <div>
+        <label>
+          Nickname:
+            <input type="text" name="name" value="{{ user.name|default('', true) }}">
+        </label>
+        {% if errors['name'] %}
+          <div>{{ errors['name'] }}</div>
+        {% endif %}
+      </div>
+      <div>
+        <label>
+          Email:
+            <input type="email" required name="email" value="{{ user.email|default('', true) }}">
+        </label>
+        {% if errors['email'] %}
+          <div>{{ errors['email'] }}</div>
+        {% endif %}
+      </div>
+      <input type="submit" value="Submit">
+    </form>
+  </body>
+</html>

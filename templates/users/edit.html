@@ -1,0 +1,28 @@
+<!doctype html>
+<html>
+  <body>
+    <form action="{{ url_for('patch_user', id=user.id) }}" method="post">
+      <div>
+        <label>
+          Nickname *
+          <input type="text" name="name" value="{{ user.name|default('', true) }}">
+        </label>
+        {% if errors %}
+          <div>{{ errors['name'] }}</div>
+        {% endif %}
+        <label>
+          Email *
+          <input type="text" name="email" value="{{ user.email|default('', true) }}">
+        </label>
+        {% if errors %}
+          <div>{{ errors['email'] }}</div>
+        {% endif %}
+      </div>
+      <input type="submit" value="Update">
+    </form>
+    <form action="{{ url_for('delete_user', id=user.id) }}" method="post"
+    onsubmit="return confirm('Are you sure you want to delete user? This action cannot be undone.');">
+    <input type="submit" value="Remove">
+    </form>
+  </body>
+</html>

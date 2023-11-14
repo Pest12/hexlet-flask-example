@@ -1,0 +1,8 @@
+<!doctype html>
+<html>
+  <body>
+    <div>
+      {{ user['id'] }}: {{ user['name'] }} <a href="{{ url_for('edit_user', id=user.id) }}">Edit</a>
+    </div>
+  <body>
+</html>
