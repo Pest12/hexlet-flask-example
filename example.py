@@ -167,5 +167,5 @@ def user_login():
             return redirect(url_for('search_user'))
     return render_template(
                 'users/login.html',
-                emal=email,
+                email=email,
     )
